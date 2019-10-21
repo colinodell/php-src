@@ -44,14 +44,14 @@ function gzuncompress(string $data, int $max_decoded_len = 0) {}
  * 
  * @return int|false
  */
-function gzwrite($fp, string $str, int $length = UNKNOWN) {};
+function gzwrite($fp, string $str, ?int $length = null) {};
 
 /**
  * @param resource $fp
  * 
  * @return int|false
  */
-function gzputs($fp, string $str, int $length = UNKNOWN) {};
+function gzputs($fp, string $str, ?int $length = null) {};
 
 /** @param resource $fp */
 function gzrewind($fp): bool {};

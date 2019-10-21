@@ -1143,16 +1143,17 @@ PHPAPI PHP_FUNCTION(fwrite)
 	ssize_t ret;
 	size_t num_bytes;
 	zend_long maxlen = 0;
+	zend_bool maxlen_is_null = 1;
 	php_stream *stream;
 
 	ZEND_PARSE_PARAMETERS_START(2, 3)
 		Z_PARAM_RESOURCE(res)
 		Z_PARAM_STRING(input, inputlen)
 		Z_PARAM_OPTIONAL
-		Z_PARAM_LONG(maxlen)
+		Z_PARAM_LONG_OR_NULL(maxlen, maxlen_is_null)
 	ZEND_PARSE_PARAMETERS_END();
 
-	if (ZEND_NUM_ARGS() == 2) {
+	if (maxlen_is_null) {
 		num_bytes = inputlen;
 	} else if (maxlen <= 0) {
 		num_bytes = 0;

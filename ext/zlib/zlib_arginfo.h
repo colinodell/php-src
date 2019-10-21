@@ -51,7 +51,7 @@ ZEND_END_ARG_INFO()
 ZEND_BEGIN_ARG_INFO_EX(arginfo_gzwrite, 0, 0, 2)
 	ZEND_ARG_INFO(0, fp)
 	ZEND_ARG_TYPE_INFO(0, str, IS_STRING, 0)
-	ZEND_ARG_TYPE_INFO(0, length, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO(0, length, IS_LONG, 1)
 ZEND_END_ARG_INFO()
 
 #define arginfo_gzputs arginfo_gzwrite

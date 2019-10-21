@@ -14,6 +14,7 @@ $h = gzopen($filename, 'w');
 $str = "Here is the string to be written. ";
 $length = 10;
 var_dump(gzputs( $h, $str ) );
+var_dump(gzputs( $h, $str, null ) );
 var_dump(gzputs( $h, $str, $length ) );
 gzclose($h);
 
@@ -26,6 +27,7 @@ unlink($filename);
 ===DONE===
 --EXPECT--
 int(34)
+int(34)
 int(10)
-Here is the string to be written. Here is th
+Here is the string to be written. Here is the string to be written. Here is th
 ===DONE===
